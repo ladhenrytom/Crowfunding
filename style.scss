@@ -1,0 +1,937 @@
+// @import url(https://fonts.googleapis.com/css?family=Sofia);
+
+$black: rgba(47, 47, 47, 1);
+$gray: rgba(250, 250, 250, 1);
+$green: rgba(60, 180, 171, 1);
+$darkGreen: rgb(33, 105, 100);
+$white: rgba(255, 255, 255, 1);
+$hero--padding: 48px 72px;
+$header--font__small: 18px;
+$header--font: 24px;
+$content--head__font: 16px;
+$content--font: 14px;
+$card--padding: 24px;
+
+//general styles
+* {
+  font-family: "Commissioner", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  // font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  background: $gray;
+}
+button {
+  cursor: pointer;
+}
+input {
+  outline: none;
+  border: none;
+  &:active,
+  &:focus {
+    outline: none;
+    border: none;
+  }
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+.header {
+  color: $black;
+  font-size: $header--font;
+  font-weight: 700;
+}
+.content {
+  color: $black;
+  font-size: $content--font;
+  font-weight: 400;
+  opacity: 0.5;
+  line-height: 2rem;
+}
+
+// nav//////////////////////////////
+.nav {
+  background-image: url("images/image-hero-desktop.jpg");
+  width: 100%;
+  height: auto;
+  padding: 20px 0 250px 0;
+  .nav--content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    .nav--links {
+      .nav--link {
+        font-size: 12px;
+        font-weight: 100;
+        text-decoration: none;
+        color: $white;
+        margin: 0 12px;
+      }
+    }
+    .nav--links__mobile {
+      display: none;
+      .nav--link__mobile {
+        text-decoration: none;
+        // margin: 0 12px;
+      }
+    }
+    .svg {
+      position: relative;
+      display: none;
+      .hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.section {
+  position: absolute;
+  margin: 0 25%;
+  left: 0;
+  right: 0;
+  top: 30%;
+  width: 40%;
+  .main--app {
+    // display: none;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    scroll-margin: 72px;
+    .hero {
+      width: 100%;
+      background: $white;
+      margin-bottom: 50px;
+      padding: $hero--padding;
+      border-radius: 8px;
+
+      .hero--one--content {
+        margin: 16px 0 24px 0;
+        font-size: 14px;
+      }
+      &:nth-child(n + 1) {
+        width: 100%;
+      }
+      &:nth-child(1) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .mastercraft--logo {
+          position: absolute;
+          top: -12%;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+        .btns--div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .btns--div button {
+          width: 28%;
+          font-size: 12px;
+          font-weight: 700;
+          outline: none;
+          border: none;
+          border-radius: 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:first-child {
+            color: $white;
+            background: $green;
+            padding: 16px 24px;
+            justify-content: center;
+            &:hover {
+              background: $darkGreen;
+            }
+          }
+        }
+        .svg--bookmark {
+          display: none;
+        }
+        .bookmark {
+          color: $black;
+          background-color: $gray;
+          svg {
+            margin-right: 12px;
+          }
+          .bookmark--text {
+            margin-right: 18px;
+          }
+        }
+        .bookmarked {
+          color: $green;
+          svg {
+            circle {
+              fill: $green;
+            }
+            path {
+              fill: $white;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .hero--two--top {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          width: 100%;
+          & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            p {
+              margin: 4px 0;
+            }
+          }
+          & div:nth-child(even) {
+            border-left: 4px solid $gray;
+            border-right: 4px solid $gray;
+          }
+          & div:nth-child(n + 2) {
+            padding-left: 36px;
+          }
+        }
+        .hero--two--bottom {
+          width: 100%;
+          background: $gray;
+          margin-top: 16px;
+          border-radius: 12px;
+          & div {
+            background: $green;
+            width: 80%;
+            height: 11px;
+            border-radius: 12px;
+          }
+        }
+      }
+      &:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .about--project {
+          margin-bottom: 24px;
+          p:nth-child(1) {
+            font-size: $content--head__font;
+            margin-top: 24px;
+          }
+          p:nth-child(n + 2) {
+            margin: 24px 0;
+          }
+        }
+        .cards {
+          .card {
+            border: 2px solid $gray;
+            border-radius: 8px;
+            margin: 24px 0;
+            padding: $card--padding;
+            div {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              div:nth-child(odd) {
+                font-size: $content--head__font;
+                font-weight: 700;
+              }
+              div:nth-child(even) {
+                color: $green;
+                font-size: $content--font;
+                font-weight: 700;
+              }
+              div.pledges--left:nth-child(1) {
+                font-size: 24px;
+                margin-right: 8px;
+              }
+              div.pledges--left:nth-child(2) {
+                color: $black;
+                font-size: 12px;
+                margin-right: 8px;
+                opacity: 0.5;
+              }
+              button {
+                color: $white;
+                background: $green;
+                padding: 12px 24px;
+                width: 25%;
+                font-size: 12px;
+                font-weight: 700;
+                outline: none;
+                border: none;
+                border-radius: 24px;
+                &:hover,
+                &:focus {
+                  background: $darkGreen;
+                }
+              }
+            }
+            .card--content {
+              margin: 24px 0;
+            }
+          }
+          .card--disabled {
+            opacity: 0.2;
+            &:hover {
+              cursor: not-allowed;
+            }
+            div {
+              button {
+                background: $black;
+                cursor: not-allowed;
+                &:hover,
+                &:focus {
+                  background: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // thank you message
+    .thank--you {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      background: $white;
+      width: 70%;
+      margin: 0 15%;
+      padding: $hero--padding;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0px 0px 24px 2px $black;
+      scroll-margin: 72px;
+      z-index: 200;
+      button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: $white;
+        background: $green;
+        padding: 12px 24px;
+        font-size: 12px;
+        font-weight: 700;
+        outline: none;
+        border: none;
+        border-radius: 24px;
+        transition: all 100ms ease-in-out;
+      }
+      .content {
+        margin: 24px 0;
+      }
+    }
+
+    // absolute div popup///////////////
+    .pledge--active {
+      position: absolute;
+      top: -5%;
+      left: 0;
+      right: 0;
+      background: $white;
+      border-radius: 8px;
+      width: 100%;
+      padding: $hero--padding;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 0px 24px 2px $black;
+      scroll-margin: 20px;
+      z-index: 200;
+      .close--btn {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        cursor: pointer;
+      }
+      .pledge--active__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        h1 {
+          margin-bottom: 24px;
+        }
+      }
+      .pledge--active__cards {
+        margin: 0;
+        .pledge--active__card--select {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border: 2px solid $gray;
+          border-radius: 8px;
+          margin: 24px 0;
+          .pledge--active__card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: $card--padding;
+            .radio--btn {
+              margin-right: 12px;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              border: 1px solid $gray;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              .radio--btn__active {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: $green;
+              }
+            }
+            .radio--btn__hover {
+              border: 1px solid $green;
+            }
+            .label {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: flex-start;
+              width: calc(100% - 24px);
+              font-weight: 700;
+              .label--header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 24px;
+                & div {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  &:nth-child(2) {
+                    display: inline-block;
+                  }
+                  p:nth-child(2) {
+                    color: $green;
+                    margin-left: 16px;
+                  }
+                  .card--header {
+                    font-size: $content--head__font;
+                    cursor: pointer;
+                    transition: all 100ms ease-in-out;
+                  }
+                  .card--header__selected {
+                    color: $green;
+                  }
+                }
+                .pledges--left {
+                  font-size: $content--head__font;
+                  .pledges--left__small {
+                    font-weight: 400;
+                    opacity: 0.5;
+                    margin-left: 4px;
+                  }
+                }
+              }
+            }
+          }
+          .number-of-pledges {
+            // width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid $gray;
+            margin: 24px 0;
+            padding: $card--padding;
+            .submit--pledges {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              button:nth-child(1) {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: $black;
+                background: $white;
+                padding: 12px 24px;
+                font-size: 12px;
+                font-weight: 700;
+                outline: none;
+                border: 2px solid $gray;
+                border-radius: 24px;
+                b {
+                  margin-right: 12px;
+                  opacity: 0.5;
+                }
+              }
+              button:nth-child(2) {
+                color: $white;
+                background: $green;
+                padding: 12px 24px;
+                font-size: 12px;
+                font-weight: 700;
+                outline: none;
+                border: none;
+                border-radius: 24px;
+                margin-left: 24px;
+                &:hover,
+                &:focus {
+                  background: $darkGreen;
+                }
+              }
+              .hidden {
+                opacity: 0;
+              }
+            }
+          }
+          // hidden attribute
+          .hidden {
+            display: none;
+          }
+        }
+        .card--selected {
+          border: 2px solid $green;
+        }
+
+        .card--disabled {
+          opacity: 0.5;
+          div,
+          p {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: $black;
+      opacity: 0.5;
+      z-index: 100;
+    }
+    // hidden attribute
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+// mobile view/////////////////////////////////////////////////
+@media only screen and (max-width: 1400px) {
+  .section {
+    width: 45%;
+    margin: 0 22.5%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .section {
+    width: 60%;
+    margin: 0 15%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .section {
+    width: 70%;
+    margin: 0 8%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .section {
+    width: 80%;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .section {
+    width: 90%;
+    margin: 1.5%;
+    .main--app {
+      // width: 90%;
+      .hero {
+        $hero--padding: 24px;
+        padding: $hero--padding;
+        &:nth-child(1) {
+          text-align: center;
+          // justify-content: space-between;
+
+          .btns--div {
+            // justify-content: space-between;
+            // padding: 24px 4px;
+            .back-this-project {
+              width: 85%;
+              padding: 24px 8px;
+            }
+            .svg--bookmark {
+              display: block;
+            }
+            .bookmark {
+              display: none;
+            }
+          }
+          svg {
+            margin-left: 8px;
+          }
+          .bookmarked {
+            circle {
+              fill: $green;
+            }
+            path {
+              fill: $white;
+            }
+          }
+        }
+        &:nth-child(3) {
+          .cards {
+            .card {
+              div {
+                &:nth-child(3) {
+                  button {
+                    width: 40%;
+
+                    // opacity: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .pledge--active {
+        padding: 24px 12px;
+        margin: auto 2.5%;
+      }
+      .thank--you {
+        width: 50%;
+        margin: 0 15%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav {
+    background-image: url("images/image-hero-mobile.jpg");
+    .nav--content {
+      .svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .hamburger {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+        .hamburger__close {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          path {
+            fill: $white;
+          }
+        }
+      }
+      .nav--links {
+        display: none;
+      }
+      .nav--links__mobile {
+        position: absolute;
+        top: 6%;
+        right: 5%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 12px;
+        background: $white;
+        width: 70%;
+        border-radius: 8px;
+        .nav--link__mobile {
+          color: $black;
+          font-size: 16px;
+          font-weight: 700;
+          margin: 0;
+          padding: 16px 0;
+          &:nth-child(n + 1) {
+            padding-left: 24px;
+            // box-shadow: 0 0 0px 1px $black;
+          }
+          &:nth-child(2) {
+            border-top: 2px solid $gray;
+            border-bottom: 2px solid $gray;
+          }
+        }
+      }
+      .hidden {
+        display: none;
+      }
+    }
+  }
+  .section {
+    margin: 2%;
+    top: 40%;
+    .main--app {
+      .hero {
+        $hero--padding: 24px 12px;
+        padding: $hero--padding;
+
+        &:nth-child(2) {
+          .hero--two--top {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & div {
+              align-items: center;
+            }
+            & div:nth-child(even) {
+              border-left: none;
+              border-right: none;
+              border-top: 4px solid $gray;
+              border-bottom: 4px solid $gray;
+            }
+            & div:nth-child(n + 2) {
+              padding-left: 0;
+            }
+          }
+        }
+        &:nth-child(3) {
+          .cards {
+            .card {
+              padding: 24px 6px;
+              div {
+                &:nth-child(3) {
+                  width: 100%;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  // opacity: 0;
+                  button {
+                    padding: 12px 8px;
+                    width: 50%;
+                    margin-top: 12px;
+                    // opacity: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .pledge--active {
+        margin: 0 0.3%;
+        .close--btn {
+          top: 0.5%;
+        }
+        .pledge--active__cards {
+          .pledge--active__card--select {
+            .pledge--active__card {
+              $card--padding: 16px;
+              padding: $card--padding;
+              .label {
+                .label--header {
+                  width: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  margin-bottom: 24px;
+                  & div {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    &:nth-child(1) {
+                      flex-direction: column;
+                      p:nth-child(2) {
+                        margin-left: 0px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .number-of-pledges {
+              flex-direction: column;
+            }
+          }
+          .card--selected {
+            border: 2px solid $green;
+          }
+
+          .card--disabled {
+            opacity: 0.5;
+            div,
+            p {
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+      .thank--you {
+        // width: 40%;
+        margin: 0 auto;
+        padding: 24px;
+        .header {
+          font-size: 18px;
+        }
+        .content {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-height: 533px) {
+    .nav {
+      .nav--content {
+        .nav--links__mobile {
+          top: 10%;
+          z-index: 1000;
+          box-shadow: 0px 0px 24px 2px $black;
+        }
+      }
+    }
+    .section {
+      margin: 0;
+      top: 50%;
+      // opacity: 0;
+    }
+  }
+}
+@media only screen and (max-width: 300px) {
+  .section {
+    margin: 0;
+    top: 40%;
+
+    .main--app {
+      .hero {
+        $hero--padding: 24px 12px;
+        padding: $hero--padding;
+        &:nth-child(1) {
+          .btns--div {
+            .back-this-project {
+              width: 70%;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .hero--two--top {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & div {
+              align-items: center;
+            }
+            & div:nth-child(even) {
+              border-left: none;
+              border-right: none;
+              border-top: 4px solid $gray;
+              border-bottom: 4px solid $gray;
+            }
+            & div:nth-child(n + 2) {
+              padding-left: 0;
+            }
+          }
+        }
+        &:nth-child(3) {
+          .cards {
+            .card {
+              padding: 24px 6px;
+              div {
+                &:nth-child(3) {
+                  width: 100%;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  // opacity: 0;
+                  button {
+                    padding: 12px 8px;
+                    width: 50%;
+                    margin-top: 12px;
+                    // opacity: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .pledge--active {
+        padding: 6px;
+        margin: 0 2%;
+        .pledge--active__cards {
+          $header--font__small: 16px;
+          $header--font: 20px;
+          $content--head__font: 14px;
+          $content--font: 12px;
+          .pledge--active__card--select {
+            padding: 4px 0;
+            .pledge--active__card {
+              $card--padding: 8px;
+              padding: $card--padding;
+              .label {
+                .label--header {
+                  .pledges--left {
+                    .pledges--left__small {
+                      margin-left: 0;
+                    }
+                  }
+                }
+              }
+            }
+            .number-of-pledges {
+              padding: 12px;
+            }
+          }
+        }
+      }
+      .thank--you {
+        width: 60%;
+        margin: 0 15%;
+        padding: 24px;
+        .header {
+          font-size: 16px;
+        }
+        .content {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-height: 400px) {
+    .nav {
+      .nav--content {
+        .nav--links__mobile {
+          top: 15%;
+          z-index: 1000;
+          box-shadow: 0px 0px 24px 2px $black;
+        }
+      }
+    }
+    .section {
+      margin: 0;
+      top: 60%;
+      // opacity: 0;
+    }
+  }
+}
