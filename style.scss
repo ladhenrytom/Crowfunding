@@ -514,8 +514,14 @@ input {
         .card--disabled {
           &:hover,&:focus{
             cursor: not-allowed;
+            div{
+              cursor: not-allowed;
+            }
+            p{
+              cursor: not-allowed;
+            }
           }
-          opacity: 0.5;
+          opacity: 0.2;
         }
       }
     }
