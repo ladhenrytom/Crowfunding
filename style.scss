@@ -512,11 +512,10 @@ input {
         }
 
         .card--disabled {
-          opacity: 0.5;
-          div,
-          p {
+          &:hover,&:focus{
             cursor: not-allowed;
           }
+          opacity: 0.5;
         }
       }
     }
