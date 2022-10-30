@@ -114,8 +114,8 @@ function openThankYouModal(arr) {
       pledgesLeft.forEach((p) => {
         if (el.getAttribute("id") == p.getAttribute("id")) {
           // console.log(p.parentElement.children[1].classList);
-          if (!p.children[0]) return;
-          else p.children[0].innerHTML--;
+          if (p.children[0]) p.children[0].innerHTML--;
+          if (!p.children[0] && Number(p.innerHTML)) p.innerHTML--;
         }
       });
       thankYou.scrollIntoView({ behavior: "smooth" });
